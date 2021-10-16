@@ -6,9 +6,10 @@
 ![Node Build](https://github.com/nucleode/typescript-microservice-starter/workflows/Node%20Build/badge.svg)
 ![Docker Build](https://github.com/nucleode/typescript-microservice-starter/workflows/Docker%20Build/badge.svg?branch=master)
 
-`Stampo` is a friction-free features-complete boilerplate for building Node.js backend services and microservices with TypeScript. It works on Windows, Linux, and macOS and makes the developer productive in no time! It supports any _Active LTS_ Node.js version (`12.12.x`, `14.x.x`, `16.x.x`).
+`fastify-stampo` is a friction-free features-complete boilerplate for building `Fastify` backend services and microservices with TypeScript. It works on Windows, Linux, and macOS and makes the developer productive in no time! It supports any _Active LTS_ Node.js version (`12.12.x`, `14.x.x`, `16.x.x`).
+It is an adaptation of `Stampo` for `Fastify`.
 
-There are only three steps you need to do to be productive after `Stampo` is initialized (follow the [Getting Started](#getting-started) section):
+There are only three steps you need to do to be productive after `fastify-stampo` is initialized (follow the [Getting Started](#getting-started) section):
 1. Put your code inside the `./src` folder
 2. Put your tests inside the `./test` folder.
 3. Relax and enjoy coding!
@@ -25,7 +26,7 @@ There are only three steps you need to do to be productive after `Stampo` is ini
 ## Getting Started
 ### Clone the repo
 ```
-$ git clone https://github.com/nucleode/typescript-microservice-starter.git {your_project_name}
+$ git clone https://github.com/alemagio/fastify-stampo.git {your_project_name}
 $ cd {your_project_name}
 ```
 
@@ -58,7 +59,7 @@ $ npm run dev
 ```
 
 ## Included npm scripts
-`Stampo` includes a bunch of scripts that cover the most common scenarios for Node.js backend projects.
+`fastify-stampo` includes a bunch of scripts that cover the most common scenarios for Node.js backend projects.
 
 The commands must be run from the project's root folder.
 
@@ -67,6 +68,8 @@ It runs the project in development mode. It uses [`nodemon`](https://github.com/
 ```
 $ npm run dev
 ```
+
+By default it uses `node` to start your application, if you prefer using `fastify-cli` just edit [this](https://github.com/alemagio/fastify-stampo/blob/aaacd5f20d4304137f32924023943d7d0c257434/nodemon.json#L6) line replacing `dev:start` with `dev:start:fastify`.
 
 ### `build`
 It builds for production all files from the `./src` to the `./build` folder. It uses `tsc` directly and therefore checks types too. It also emits the source maps.
@@ -147,3 +150,9 @@ docker build -t my-project-name .
 ```
 docker run -p PORT:PORT my-project-name
 ```
+
+## Acknowledgments
+
+This template is a porting of [Stampo](https://github.com/fox1t/typescript-microservice-starter) and just adapted for `Fastify`.
+
+Many lines of docs are exactly the same and are included just to avoid jumping from one repo to another and to make sure that, if something changes in `Stampo`, this doc is still valid and it will be changed once changes are reflected in the code too.
