@@ -13,7 +13,7 @@ import closeWithGrace from 'close-with-grace'
 // Instantiate Fastify with some config
 const app = Fastify({
   logger: {
-    prettyPrint: true,
+    prettyPrint: process.env.NODE_ENV === 'development',
   },
 })
 
