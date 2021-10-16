@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "npm run lint && rimraf ./build",
     "build": "tsc -p ./tsconfig.json",
-    "start": "node --enable-source-maps build/index.js",
+    "start": "node --enable-source-maps build/server.js",
     "update": "npx npm-check -u",
     "lint": "eslint --ext .ts --no-error-on-unmatched-pattern \"src/**/*.ts\" \"test/**/*.ts\"",
     "dev:build": "tsc --incremental -p tsconfig.json",
